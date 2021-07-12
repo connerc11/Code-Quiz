@@ -7,31 +7,103 @@
     font-size: 80%;
   }
 
-  .container {
-    margin: auto;
-    width: 100%;
-    height: 100px;
-    text-align: center;
-  }
-
-
-.page-title {
-text-align: center;
-color: var(--primary);
+  
+body {
+    background: var(--primary)
 }
 
-.page-description {
-    text-align: center;
-    color: var(--secondary);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+.start-btn,
+.info-box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
-.btn {
-color: var(--tertiary);    
-width: 40%;
-margin-left: 30%;
-margin-right: 30%;
-background-color: var(--background);
-   
+.start-btn button{
+    font-size: 35px;
+    font-weight: 600;
+    background: var(--background);
+    padding: 20px 25px;
+    border-radius: 6px;
+    outline: none;
+    color: var(--primary);
 }
+
+.info-box{
+    width: 600px;
+    background: var(--background);
+    border-radius: 10px;
+}
+
+.info-box .info-title {
+    height: 65px;
+    border-bottom: 2px dotted powderblue;
+    display: flex;
+    padding: 0 40px;
+    align-items: center;
+    font-weight: 700;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+
+}
+
+.info-box .info-list {
+    padding: 15px 40px;
+}
+
+.info-box .info-list .in {
+    margin: 7px 0;
+    font-size: 20px;
+}
+
+.info-box .info-list .in span {
+    font-style: italic;   
+}
+
+.info-box .exit-btn {
+    height: 50px;
+    justify-content: flex-end;
+    display: flex;
+    padding: 0 40px;
+    align-items: center;
+    border-top: 2px dotted salmon;
+}
+
+.info-box .exit-btn button {
+    margin: 5px 5px;
+    background: var(--background);
+    color: var(--primary);
+    height: 50px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 450;
+    border: 2px dotted salmon;
+    cursor: pointer;
+    transition: .5s ease-in;
+}
+
+.exit-btn button.leave {
+    color: white;
+    background: var(--primary);
+}
+
+.exit-btn button.leave:hover {
+    background: chartreuse;
+}
+
+.exit-btn button.restart {
+    color: white;
+    background: var(--primary);
+}
+
+.exit-btn button.restart:hover {
+    background: chartreuse;
+}
+
+
+
+
+
 
