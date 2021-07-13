@@ -1,14 +1,14 @@
-
-var startBtn = document.querySelector(".start8btn button");
-var infoBox = document.querySelector(".info8box");
-var exitBtn = info8box.querySelector(".exit8btn .leave");
-var continueBtn =info8box.querySelector(".exit8btn .restart");
-
+var start8btn = document.querySelector(".start8btn button");
+var info8box = document.querySelector(".info8box");
+var exit8btn = info8box.querySelector(".exit8btn .leave");
+var restart8btn = info8box.querySelector(".exit8btn .restart");
 
 
-startBtn.onclick = ()=>{
-    info8box.classList.add("activeInfo")
+start8btn.onclick = ()=>{
+    info8box.classList.add("activeInfo");
 }
+
+
 
 
 
