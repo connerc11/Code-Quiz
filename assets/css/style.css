@@ -12,15 +12,25 @@ body {
     background: var(--primary)
 }
 
-.start-btn,
-.info-box{
+.start8btn,
+.info8box,
+.box8quiz
+{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.start-btn button{
+
+.info8box.activeInfo{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(.9);
+    z-index: 5;
+}
+
+.start8btn button{
     font-size: 35px;
     font-weight: 600;
     background: var(--background);
@@ -30,13 +40,14 @@ body {
     color: var(--primary);
 }
 
-.info-box{
+.info8box{
+    display: none;
     width: 600px;
     background: var(--background);
     border-radius: 10px;
 }
 
-.info-box .info-title {
+.info8box .info8title {
     height: 65px;
     border-bottom: 2px dotted powderblue;
     display: flex;
@@ -48,20 +59,20 @@ body {
 
 }
 
-.info-box .info-list {
+.info8box .info8list {
     padding: 15px 40px;
 }
 
-.info-box .info-list .in {
+.info8box .info8list .in {
     margin: 7px 0;
     font-size: 20px;
 }
 
-.info-box .info-list .in span {
+.info8box .info8list .in span {
     font-style: italic;   
 }
 
-.info-box .exit-btn {
+.info8box .exit8btn {
     height: 50px;
     justify-content: flex-end;
     display: flex;
@@ -70,7 +81,7 @@ body {
     border-top: 2px dotted salmon;
 }
 
-.info-box .exit-btn button {
+.info8box .exit8btn button {
     margin: 5px 5px;
     background: var(--background);
     color: var(--primary);
@@ -84,24 +95,96 @@ body {
     transition: .5s ease-in;
 }
 
-.exit-btn button.leave {
+.exit8btn button.leave {
     color: white;
     background: var(--primary);
 }
 
-.exit-btn button.leave:hover {
+.exit8btn button.leave:hover {
     background: chartreuse;
 }
 
-.exit-btn button.restart {
+.exit8btn button.restart {
     color: white;
     background: var(--primary);
 }
 
-.exit-btn button.restart:hover {
+.exit8btn button.restart:hover {
     background: chartreuse;
 }
 
+.box8quiz {
+    width: 600px;
+    background: var(--secondary);
+    border-radius: 4px;
+}
+
+.box8quiz header {
+    height: 85px;
+    padding: 0 35px;
+    background: var(--secondary);
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 6px 6px 0 0;
+    position: relative
+}
+
+
+.box8quiz header .title{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.box8quiz header .time{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 150px;
+    height: 40px;
+    background: var(--tertiary);
+    border: 1px dotted var(--secondary);
+    border-radius: 6px;
+    padding: 0 8px;
+}
+
+.box8quiz header .time .time8font{
+    font-weight: 350;
+    user-select: none;
+    }
+
+    .box8quiz header .time .seconds {
+        font-size: 20px;
+        font-weight: 450;
+        background: var(--tertiary);
+        height: 35px;
+        width: 40px;
+        color: turquoise;
+        text-align: center;
+        border-radius: 7px;
+        line-height: 30px;
+        border: 2px dotted gainsboro;
+        user-select: none;
+}
+
+.box8quiz section {
+    padding: 20px 35px 25px  35px;
+    background: red;
+}
+
+.box8quiz section .display8text {
+    font-size: 30px;
+    font-weight: 525;
+}
+
+.box8quiz section .options8list{
+    padding: 20px;
+    display: block;
+    }
+
+    .box8quiz section .options8list .option {
+        
+    }
 
 
 
