@@ -2,14 +2,21 @@ var start8btn = document.querySelector(".start8btn button");
 var info8box = document.querySelector(".info8box");
 var exit8btn = info8box.querySelector(".exit8btn .leave");
 var restart8btn = info8box.querySelector(".exit8btn .restart");
-
+var box8quiz = document.querySelector(".box8quiz")
 
 start8btn.onclick = ()=>{
     info8box.classList.add("activeInfo");
 }
 
+exit8btn.onclick = ()=>{
+    info8box.classList.remove("activeInfo");
+}
 
 
+restart8btn.onclick = ()=>{
+    info8box.classList.remove("activeInfo");
+    box8quiz.classList.add("activeQuiz")
+}
 
 
  
