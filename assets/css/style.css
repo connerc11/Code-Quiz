@@ -1,3 +1,5 @@
+
+/* All the main colors */
 :root {
     --primary: blue;
     --secondary: red;
@@ -11,6 +13,8 @@
 body {
     background: var(--primary)
 }
+
+/* Main groups for each section */
 
 .start8btn,
 .info8box,
@@ -110,17 +114,17 @@ body {
     background: chartreuse;
 }
 
-.exit8btn button.restart {
+.exit8btn button.continue {
     color: white;
     background: var(--primary);
 }
 
-.exit8btn button.restart:hover {
+.exit8btn button.continue:hover {
     background: chartreuse;
 }
 
 .box8quiz {
-    display: none;
+
     width: 600px;
     background: var(--secondary);
     border-radius: 4px;
