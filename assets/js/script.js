@@ -20,15 +20,23 @@ exit8btn.onclick = ()=>{
 continue8btn.onclick = ()=>{
     info8box.classList.remove("activeInfo");
     box8quiz.classList.add("activeQuiz")
-    showQuestions(0);
+    showQuestions(3);
 }
 
-let display8text = 0;
+let display8count = 0;
+
+const next8btn = box8quiz.querySelector(".next8btn")
 
 function showQuestions(index){
-    var display8text = document.querySelector(".display8text");
-    let display8count = '<span>'+ questions[index].question +'<span>';
-    display8text.innerHTML = display8count;
+    const display8text = document.querySelector(".display8text");
+    const options8list = document.querySelector(".options8list")
+    let display8tag = '<span>'+ questions[index].question +'<span>';
+    let options8tag = '<div class="option>'+ questions[index].options[0] +'<span></span></div>'
+                      + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
+                      + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
+                      + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
+    display8text.innerHTML = display8tag;
+    options8list.innerHTML = options8tag
 }
 
 

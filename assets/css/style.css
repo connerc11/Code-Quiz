@@ -30,7 +30,7 @@ body {
 
 
 .info8box.activeInfo,
-.box8quiz.activeInfo {
+.box8quiz.activeQuiz {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(.9);
@@ -250,6 +250,7 @@ body {
         border-radius: 6px;
         border: 2px dotted aquamarine;
         cursor: pointer;
+        margin: 60%;
     }
 
     footer .next8btn:hover {
