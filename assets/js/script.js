@@ -1,66 +1,3 @@
-//array for variables and the questions
-
-var questions = [
-    {
-        numb: 1,
-        question: "What does 3 equal signs mean?",
-        answer: "Exactly Equal",
-        options: [
-             "Close to",
-             "Approximately equal",
-             "Exactly equal",
-             "Near the closest choice"
-        ]
-    },
-    {
-        numb: 2,
-        question: "Which one of these is not a way to show a variable in JavaScript?",
-        answer: "tog",
-        options: [
-            "var",
-            "const",
-            "tog",
-            "let",
-        ]
-    },
-    {
-        numb: 3,
-        question: "Which wording can you use to properly link JavaScript with HTML?",
-        answer: "Script",
-        options: [
-             "Tight",
-             "Script",
-             "displayJS",
-             "pushJS"
-        ]
-    },
-    {
-        numb: 4,
-        question: "Which is the proper way of hiding code from being displayed?",
-        answer: "//",
-        options: [
-             "?0",
-             "hideC",
-             "/)",
-             "//"
-        ]
-    },
-    {
-        numb: 5,
-        question: "Whic is the proper format for creating a JavaScript function?",
-        answer: "function myFunction()",
-        options: [
-             "function the function:",
-             "function hiFunction",
-             "function myFunction()",
-             "function myfunction )"
-        ]
-    },
-    
-];
-
-
-
 //The Variables that are linking the buttons //
 
 var start8btn = document.querySelector(".start8btn button");
@@ -68,8 +5,10 @@ var info8box = document.querySelector(".info8box");
 var exit8btn = info8box.querySelector(".exit8btn .leave");
 var continue8btn = info8box.querySelector(".exit8btn .continue");
 var box8quiz = document.querySelector(".box8quiz");
-var timer8count = box8quiz.querySelector(".time .seconds")
-var options8list = document.querySelector("options8list");
+var timer8count = box8quiz.querySelector(".time .seconds");
+const options8list = document.querySelector(".options8list");
+
+
 
 //This will allow the quiz to added//
 start8btn.onclick = ()=>{
@@ -113,8 +52,7 @@ next8btn.onclick = ()=>{
 
 function showQuestions(index){
     const display8text = document.querySelector(".display8text");
-    const options8list = document.querySelector(".options8list");
-    let display8tag = '<span>'+ questions[index].numb + "." + questions[index].question +'</span>';
+    let display8tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let options8tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
                       + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
                       + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
@@ -122,15 +60,16 @@ function showQuestions(index){
     display8text.innerHTML = display8tag;
     options8list.innerHTML = options8tag;
     const option = options8list.querySelectorAll(".option");
-        for (let i = 0; i < options8list.length; i++) {
-            option[i].setAtribute("onclick", "optionSelected(this)");
-        }
+    for (let i = 0; i < option.length; i++) {
+        option[i].setAttribute("onclick", "optionSelected(this)");
+    }
 }
 
 
 function optionSelected(answer) {
     clearInterval(time8counter);
     let theirAns = answer.textContext;
+    console.log(theirAns);
     let rightAns = questions[display8count].answer;
     let allOptions = options8list.children.length;
     if(theirAns === rightAns) {
