@@ -67,7 +67,9 @@ var start8btn = document.querySelector(".start8btn button");
 var info8box = document.querySelector(".info8box");
 var exit8btn = info8box.querySelector(".exit8btn .leave");
 var continue8btn = info8box.querySelector(".exit8btn .continue");
-var box8quiz = document.querySelector(".box8quiz")
+var box8quiz = document.querySelector(".box8quiz");
+var timer8count = box8quiz.querySelector(".time .seconds")
+var options8list = document.querySelector("options8list");
 
 //This will allow the quiz to added//
 start8btn.onclick = ()=>{
@@ -85,10 +87,13 @@ continue8btn.onclick = ()=>{
     box8quiz.classList.add("activeQuiz")
     showQuestions(0);
     queCount(1);
+    startTimer(20);
 }
 
 let display8count = 0;
 let que8numb = 1;
+let time8counter;
+let clock = 20;
 
 const next8btn = box8quiz.querySelector(".next8btn")
 
@@ -99,6 +104,8 @@ next8btn.onclick = ()=>{
         que8numb++;
         showQuestions(display8count);
         queCount(que8numb);
+        clearInterval(time8counter);
+        startTimer(clock);
     }else{
         console.log("Quiz has been finished");
     }
@@ -106,19 +113,60 @@ next8btn.onclick = ()=>{
 
 function showQuestions(index){
     const display8text = document.querySelector(".display8text");
-    const options8list = document.querySelector(".options8list")
+    const options8list = document.querySelector(".options8list");
     let display8tag = '<span>'+ questions[index].numb + "." + questions[index].question +'</span>';
-    let options8tag = '<div class="option>'+ questions[index].options[0] +'<span></span></div>'
+    let options8tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
                       + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
                       + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
                       + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
     display8text.innerHTML = display8tag;
     options8list.innerHTML = options8tag;
     const option = options8list.querySelectorAll(".option");
-        for (let i=0; i <option.length; index++) {
-            option[i].setAtribute("onclick", "optionSelected(this)")
+        for (let i = 0; i < options8list.length; i++) {
+            option[i].setAtribute("onclick", "optionSelected(this)");
         }
 }
+
+
+function optionSelected(answer) {
+    clearInterval(time8counter);
+    let theirAns = answer.textContext;
+    let rightAns = questions[display8count].answer;
+    let allOptions = options8list.children.length;
+    if(theirAns === rightAns) {
+        answer.classList.add("correct");
+        console.log("Answer is Right")
+    }else{
+        answer.classList.add("incorrect")
+        console.log("Answer is Wrong")
+
+        for(let i = 0; i < allOptions; i++) {
+            if(options8list.children[i].textContent === rightAns){
+                options8list.children[i].setAttribute("class", "option correct");
+            }
+        }
+
+        }
+   for (let i = 0; i < allOptions; i++) {
+    options8list.children[i].classList.add("disabled")
+   }
+}
+
+function startTimer(time){
+    time8counter = setInterval(timer, 1000);
+    function timer(){
+        timer8count.textContent = time;
+        time--;
+
+        if(time < 0){
+            clearInterval(counter);
+            time8counter.textContent = "00"
+        }
+    }
+}
+
+
+
 
 function queCount(index){
     const question8counter = box8quiz.querySelector(".final8que")

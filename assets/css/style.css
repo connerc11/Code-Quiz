@@ -216,6 +216,23 @@ body {
     }
 
 
+    .options8list .option.correct{
+        color: cyan;
+        background: darkgray;
+        border-color: darkgreen;
+    }
+
+    .options8list .option.incorrect{
+        color: cyan;
+        background: darkgray;
+        border-color: darkgreen;
+    }
+
+    .options8list .option.disabled{
+        pointer-events: none;
+    }
+
+    
     .box8quiz footer {
         height: 60px;
         width: 100%;
