@@ -30,7 +30,8 @@ body {
 
 
 .info8box.activeInfo,
-.box8quiz.activeQuiz {
+.box8quiz.activeQuiz,
+.results.activeResult {
     opacity: 1;
     pointer-events: auto;
     transform: translate(-50%, -50%) scale(.9);
@@ -258,6 +259,7 @@ body {
     }
 
     footer .next8btn {
+        display: none;
         height: 40px;
         padding: 0 15px;
         font-size: 18px;
@@ -273,6 +275,16 @@ body {
     footer .next8btn:hover {
         background: brown;
 
+    }
+
+    .button button.redo{
+        color: blue;
+        background: red;
+    }
+
+    .button button.end {
+        color: blue;
+        background: red;
     }
 
     .results {
@@ -305,11 +317,13 @@ body {
         display: flex;
         margin: 10px 0;
         font-size: 20px;
+        font-weight: 500;
 
     }
 
     .score8text span p {
-        font-weight: 500;
+        font-weight: 600;
+        padding: 0 4px;
     }
 
     .results .button {
