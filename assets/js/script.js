@@ -5,8 +5,9 @@ var info8box = document.querySelector(".info8box");
 var exit8btn = info8box.querySelector(".exit8btn .leave");
 var continue8btn = info8box.querySelector(".exit8btn .continue");
 var box8quiz = document.querySelector(".box8quiz");
+var options8list = document.querySelector(".options8list");
 var timer8count = box8quiz.querySelector(".time .seconds");
-const options8list = document.querySelector(".options8list");
+
 
 
 
@@ -53,40 +54,40 @@ next8btn.onclick = ()=>{
 function showQuestions(index){
     const display8text = document.querySelector(".display8text");
     let display8tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
-    let options8tag = '<div class="option">'+ questions[index].options[0] +'<span></span></div>'
-                      + '<div class="option">'+ questions[index].options[1] +'<span></span></div>'
-                      + '<div class="option">'+ questions[index].options[2] +'<span></span></div>'
-                      + '<div class="option">'+ questions[index].options[3] +'<span></span></div>';
+    let options8tag = '<div class="option">'+ questions[index].options[0] +'</span></div>'
+                      + '<div class="option">'+ questions[index].options[1] +'</span></div>'
+                      + '<div class="option">'+ questions[index].options[2] +'</span></div>'
+                      + '<div class="option">'+ questions[index].options[3] +'</span></div>';
     display8text.innerHTML = display8tag;
     options8list.innerHTML = options8tag;
     const option = options8list.querySelectorAll(".option");
-    for (let i = 0; i < option.length; i++) {
+    for (i = 0; i < option.length; i++) {
         option[i].setAttribute("onclick", "optionSelected(this)");
     }
 }
 
 
-function optionSelected(answer) {
+function optionSelected(answer){
     clearInterval(time8counter);
-    let theirAns = answer.textContext;
-    console.log(theirAns);
-    let rightAns = questions[display8count].answer;
-    let allOptions = options8list.children.length;
-    if(theirAns === rightAns) {
+    let userAns = answer.textContent;
+    console.log(userAns);
+    let corrAns = questions[display8count].answer;
+    const allOptions = options8list.children.length;
+    if(userAns === corrAns) {
         answer.classList.add("correct");
         console.log("Answer is Right")
     }else{
         answer.classList.add("incorrect")
         console.log("Answer is Wrong")
 
-        for(let i = 0; i < allOptions; i++) {
-            if(options8list.children[i].textContent === rightAns){
+        for(i = 0; i < allOptions; i++) {
+            if(options8list.children[i].textContent == corrAns){
                 options8list.children[i].setAttribute("class", "option correct");
             }
         }
 
         }
-   for (let i = 0; i < allOptions; i++) {
+   for (i = 0; i < allOptions; i++) {
     options8list.children[i].classList.add("disabled")
    }
 }

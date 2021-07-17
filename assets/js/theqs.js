@@ -1,4 +1,4 @@
-var questions = [
+let questions = [
     {
         numb: 1,
         question: "What does 3 equal signs mean?",
@@ -6,7 +6,7 @@ var questions = [
         options: [
              "Close to",
              "Approximately equal",
-             "Exactly equal",
+             "Exactly Equal",
              "Near the closest choice"
         ]
     },
