@@ -7,10 +7,9 @@ var continue8btn = info8box.querySelector(".exit8btn .continue");
 var box8quiz = document.querySelector(".box8quiz");
 var results = document.querySelector(".results");
 var options8list = document.querySelector(".options8list");
-// var timer8count = box8quiz.querySelector(".timer .seconds");
-var timer8count = document.querySelector(".timer .seconds")
+var timer8count = box8quiz.querySelector(".seconds")
 var timer8questions = questions.length * 12;
-var timer8id 
+var timer8id;
 
 
 
@@ -18,7 +17,6 @@ var timer8id
 //This will allow the quiz to added//
 start8btn.onclick = ()=>{
     info8box.classList.add("activeInfo");
-    timer8count.textContent = timer8questions;
 }
 
 //THis will take you back to the beginning//
@@ -32,12 +30,14 @@ continue8btn.onclick = ()=>{
     box8quiz.classList.add("activeQuiz");
     showQuestions(0);
     queCount(1);
+    timer8id = setInterval(timer, 1000)
+    timer8count.textContent = timer8questions;
     // startTimer(20);
 }
 
 let display8count = 0;
 let que8numb = 1;
-// let timer8questions;
+let time8counter;
 // let clock = 60;
 let totalScore = 0;
 
@@ -137,12 +137,10 @@ function showResultBox() {
 
 
 
-    timer8id = setInterval(timer, 1000);
-function timer (){
-    question8counters --;
-    timer8count.textContent = timer8questions;
-
     
+function timer (){
+    timer8questions --;
+    timer8count.textContent = timer8questions;
 }
 
 //     function timer(){
