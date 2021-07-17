@@ -8,7 +8,7 @@ var box8quiz = document.querySelector(".box8quiz");
 var results = document.querySelector(".results");
 var options8list = document.querySelector(".options8list");
 var timer8count = box8quiz.querySelector(".seconds")
-var timer8questions = questions.length * 12;
+var timer8questions = questions.length * 2;
 var timer8id;
 
 
@@ -32,13 +32,12 @@ continue8btn.onclick = ()=>{
     queCount(1);
     timer8id = setInterval(timer, 1000)
     timer8count.textContent = timer8questions;
-    // startTimer(20);
+
 }
 
 let display8count = 0;
 let que8numb = 1;
 let time8counter;
-// let clock = 60;
 let totalScore = 0;
 
 
@@ -63,7 +62,6 @@ next8btn.onclick = ()=>{
         showQuestions(display8count);
         queCount(que8numb);
         clearInterval(time8counter);
-        startTimer(clock);
         next8btn.style.display = "none";
     }else{
         console.log("Quiz has been finished");
@@ -141,25 +139,38 @@ function showResultBox() {
 function timer (){
     timer8questions --;
     timer8count.textContent = timer8questions;
+
+    
+    
+    
+    
+    
+    
+    if(timer8questions === 0 ) {
+        console.log("You have ran out of time");
+        box8quiz.classList.remove("activeQuiz")
+        results.classList.add("activeResult");
+        var finalText = results.querySelector(".score8text");
+    if(totalScore > 3) {
+        let scoreTag = '<span>Amazing Work! You got <p>'+ totalScore +'</p> out of<p>'+ questions.length +'</p></span>';
+        finalText.innerHTML = scoreTag;
+    }
+    else if(totalScore > 1) {
+        let scoreTag = '<span>Nice try, You got <p>'+ totalScore +'</p> out of<p>'+ questions.length +'</p></span>';
+        finalText.innerHTML = scoreTag;
+    }
+        else {
+            let scoreTag = '<span>Oops, You got <p>'+ totalScore +'</p> out of<p>'+ questions.length +'</p></span>';
+            finalText.innerHTML = scoreTag;
+    }
+        document.getElementById('timer'); 
+        
+    }
 }
 
-//     function timer(){
-//         document.getElementById('timer').innerHTML=timer8counter;
-//   time--;
-//   if (count === 0){
-//     clearInterval(time8counter);
-//     document.getElementById('count').innerHTML='Done';
-//     console.log("You're out of time!");
 
 
  
-
-
-        
-        
-
-
-
 function queCount(index){
     const question8counter = box8quiz.querySelector(".final8que")
     let totalCount = '<span><p>' + index + '</p>Of<p>' + questions.length + '</p>Questions</span>';
