@@ -8,7 +8,7 @@ var box8quiz = document.querySelector(".box8quiz");
 var results = document.querySelector(".results");
 var options8list = document.querySelector(".options8list");
 var timer8count = box8quiz.querySelector(".seconds")
-var timer8questions = questions.length * 2;
+var timer8questions = questions.length * 12;
 var timer8id;
 
 
@@ -139,15 +139,10 @@ function showResultBox() {
 function timer (){
     timer8questions --;
     timer8count.textContent = timer8questions;
-
     
-    
-    
-    
-    
-    
-    if(timer8questions === 0 ) {
+    if(timer8questions === 0) {
         console.log("You have ran out of time");
+        alert("Time has expired!");
         box8quiz.classList.remove("activeQuiz")
         results.classList.add("activeResult");
         var finalText = results.querySelector(".score8text");
@@ -163,10 +158,14 @@ function timer (){
             let scoreTag = '<span>Oops, You got <p>'+ totalScore +'</p> out of<p>'+ questions.length +'</p></span>';
             finalText.innerHTML = scoreTag;
     }
-        document.getElementById('timer'); 
-        
-    }
+    document.querySelector('incorrect').addEventListener('click', function() {
+        sec -= 5;
+        document.querySelector('seconds').innerHTML='00:'+sec;
+    });
+    timer();
 }
+}
+
 
 
 
