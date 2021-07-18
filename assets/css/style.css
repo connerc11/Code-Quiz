@@ -2,7 +2,7 @@
 /* All the main colors */
 :root {
     --primary: blue;
-    --secondary: red;
+    --secondary: pink;
     --tertiary: rgb(192, 246, 253);
     --white: white;
     --background: pink;
@@ -11,7 +11,7 @@
 
   
 body {
-    background: var(--primary)
+    background: skyblue;
 }
 
 /* Main groups for each section */
@@ -188,7 +188,7 @@ body {
 
 .box8quiz section {
     padding: 20px 35px 25px  35px;
-    background: red;
+    background: pink;
 }
 
 .box8quiz section .display8text {
@@ -204,8 +204,7 @@ body {
     .box8quiz section .options8list .option {
         border: 2px dotted aquamarine;
         border-radius: 6px;
-        background: blue;
-        color: var(--white);
+        background: skyblue;
         margin-bottom: 20px;
         padding: 9px 20px;
         display: flex;
@@ -284,8 +283,8 @@ body {
     }
 
     .button button.end {
-        color: blue;
-        background: white;
+        color: white;
+        background: blue;
     }
 
     .button button.end:hover {
@@ -294,9 +293,9 @@ body {
 
 
     .results {
-        background: var(--primary);
-        width: 400px;
-        padding: 25px 30px;
+        background: pink;
+        width: 500px;
+        padding: 15px 30px;
         border-radius: 7px;
         text-align: center;
         display: flex;
@@ -304,15 +303,10 @@ body {
         justify-content: space-between;
         opacity: 0;
         pointer-events: none;
-        transform: translate(-50%, -50%) scale(.6);
+        transform: translate(-50%, -50%) scale(.9);
 
     }
 
-    .results .icon {
-        font-size: 80px;
-        color: var(--secondary);
-        margin-bottom: 12px;
-    }
 
     .results .final8text {
         font-size: 20px;
