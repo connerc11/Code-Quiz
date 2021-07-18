@@ -35,6 +35,8 @@ continue8btn.onclick = ()=>{
 
 }
 
+
+
 let display8count = 0;
 let que8numb = 1;
 let time8counter;
@@ -47,7 +49,7 @@ var quit8JavaScriptQ = results.querySelector(".button .end");
 
 
 
-
+//This will revert back to the start of the quiz
 quit8JavaScriptQ .onclick =()=>{
     window.location.reload();
 }
@@ -69,6 +71,8 @@ next8btn.onclick = ()=>{
     }
 }
 
+
+//This will display the questions with their options
 function showQuestions(index){
     const display8text = document.querySelector(".display8text");
     let display8tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
@@ -84,7 +88,7 @@ function showQuestions(index){
     }
 }
 
-
+//This will determine the scoring for the quiz
 function optionSelected(answer){
     clearInterval(time8counter);
     let userAns = answer.textContent;
@@ -114,6 +118,7 @@ next8btn.style.display = "block";
 
 }
 
+//This will be the page with the results based on all the correct answers 
 function showResultBox() {
     info8box.classList.remove("activeInfo");
     box8quiz.classList.remove("activeQuiz")
@@ -135,7 +140,7 @@ function showResultBox() {
 
 
 
-    
+// This is the timer used to determine the total length of the quiz    
 function timer (){
     timer8questions --;
     timer8count.textContent = timer8questions;
@@ -161,7 +166,8 @@ function timer (){
 }
 }
 
-function subtractTime (answer) {
+//This should be used to eliminate time from the timer
+function subtractTime (timer8questions) {
     userAns = timer8questions
     if (userAns === "corrAns"){
         sec += 5;
@@ -173,8 +179,7 @@ function subtractTime (answer) {
 
 
 
- 
-function queCount(index){
+ function queCount(index){
     const question8counter = box8quiz.querySelector(".final8que")
     let totalCount = '<span><p>' + index + '</p>Of<p>' + questions.length + '</p>Questions</span>';
     question8counter.innerHTML = totalCount;

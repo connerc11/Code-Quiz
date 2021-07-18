@@ -3,6 +3,7 @@ This is a project that includes a JavaScript quiz! It contains 5 questions and p
 
 ## Information about the Project
 ~The following link provides a way to get to the quiz:
+https://connerc11.github.io/Code-quiz/
 
 ~The following is an image of the Code Quiz!
 ![Get Started](./assets/images/image.jpg)

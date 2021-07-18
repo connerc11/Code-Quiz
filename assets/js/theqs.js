@@ -1,3 +1,5 @@
+//This is an array of all the questions with their answers
+
 let questions = [
     {
         numb: 1,

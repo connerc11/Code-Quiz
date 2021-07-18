@@ -170,20 +170,20 @@ body {
 .box8quiz header .time .time8font{
     font-weight: 350;
     user-select: none;
-    }
+}
 
-    .box8quiz header .timer .seconds {
-        font-size: 20px;
-        font-weight: 450;
-        background: var(--tertiary);
-        height: 35px;
-        width: 40px;
-        color: turquoise;
-        text-align: center;
-        border-radius: 7px;
-        line-height: 30px;
-        border: 2px dotted gainsboro;
-        user-select: none;
+.box8quiz header .timer .seconds {
+    font-size: 20px;
+    font-weight: 450;
+    background: var(--tertiary);
+    height: 35px;
+    width: 40px;
+    color: turquoise;
+    text-align: center;
+    border-radius: 7px;
+    line-height: 30px;
+    border: 2px dotted gainsboro;
+    user-select: none;
 }
 
 .box8quiz section {
@@ -199,149 +199,149 @@ body {
 .box8quiz section .options8list{
     padding: 20px;
     display: block;
-    }
+}
 
-    .box8quiz section .options8list .option {
-        border: 2px dotted aquamarine;
-        border-radius: 6px;
-        background: skyblue;
-        margin-bottom: 20px;
-        padding: 9px 20px;
-        display: flex;
-        align-items: center;
-        cursor: pointer;
-        justify-content: space-between;
+.box8quiz section .options8list .option {
+    border: 2px dotted aquamarine;
+    border-radius: 6px;
+    background: skyblue;
+    margin-bottom: 20px;
+    padding: 9px 20px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    justify-content: space-between;
+    
+}
 
-    }
-
-    section .options8list .option:hover {
-        color: white;
-        background: lightgreen;
-        border-color: darkgreen;
-    }
+section .options8list .option:hover {
+    color: white;
+    background: lightgreen;
+    border-color: darkgreen;
+}
 
 
-    .options8list .option.correct{
-        color: lawngreen;
-        background: darkgray;
-        border-color: darkgreen;
-    }
+.options8list .option.correct{
+    color: lawngreen;
+    background: darkgray;
+    border-color: darkgreen;
+}
 
-    .options8list .option.incorrect{
-        color: red;
-        background: darkgray;
-        border-color: darkgreen;
-    }
+.options8list .option.incorrect{
+    color: red;
+    background: darkgray;
+    border-color: darkgreen;
+}
 
-    .options8list .option.disabled{
-        pointer-events: none;
-    }
+.options8list .option.disabled{
+    pointer-events: none;
+}
 
     
-    .box8quiz footer {
-        height: 60px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 0 35px;
-    }
+.box8quiz footer {
+    height: 60px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 35px;
+}
 
-    .box8quiz footer .final8que span{
-        display: flex;
-        user-select: none;
+.box8quiz footer .final8que span{
+    display: flex;
+    user-select: none;
 
-    }
+}
 
-    footer .final8que span p {
-        font-weight: 700;
-        padding: 0 10px;
-    }
+footer .final8que span p {
+    font-weight: 700;
+    padding: 0 10px;
+}
   
-    footer .final8que span p:first-child{
-        padding-left: 0px;
+footer .final8que span p:first-child{
+    padding-left: 0px;
 
-    }
+}
 
-    footer .next8btn {
-        display: none;
-        height: 40px;
-        padding: 0 15px;
-        font-size: 18px;
-        border: none;
-        color: var(--white);
-        background: blue;
-        border-radius: 6px;
-        border: 2px dotted aquamarine;
-        cursor: pointer;
-        margin: 60%;
-    }
+footer .next8btn {
+    display: none;
+    height: 40px;
+    padding: 0 15px;
+    font-size: 18px;
+    border: none;
+    color: var(--white);
+    background: blue;
+    border-radius: 6px;
+    border: 2px dotted aquamarine;
+    cursor: pointer;
+    margin: 60%;
+}
 
-    footer .next8btn:hover {
-        background: lightgreen;
+footer .next8btn:hover {
+    background: lightgreen;
 
-    }
+}
 
-    .button button.end {
-        color: white;
-        background: blue;
-    }
+.button button.end {
+    color: white;
+    background: blue;
+}
 
-    .button button.end:hover {
-        background: lightgreen;
-    }
-
-
-    .results {
-        background: pink;
-        width: 500px;
-        padding: 15px 30px;
-        border-radius: 7px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        opacity: 0;
-        pointer-events: none;
-        transform: translate(-50%, -50%) scale(.9);
-
-    }
+.button button.end:hover {
+    background: lightgreen;
+}
 
 
-    .results .final8text {
-        font-size: 20px;
-        font-weight: 600;
-    }
+.results {
+    background: pink;
+    width: 500px;
+    padding: 15px 30px;
+    border-radius: 7px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -50%) scale(.9);
 
-    .results .score8text span {
-        display: flex;
-        margin: 10px 0;
-        font-size: 20px;
-        font-weight: 500;
+}
 
-    }
 
-    .score8text span p {
-        font-weight: 600;
-        padding: 0 4px;
-    }
+.results .final8text {
+    font-size: 20px;
+    font-weight: 600;
+}
 
-    .results .button {
-        display: flex;
-        margin: 20px 2px;
+.results .score8text span {
+    display: flex;
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: 500;
 
-    }
+}
 
-    .results .button button {
-        margin: 1px 12px;
-        height: 45px;
-        padding: 0 25px;
-        border: none;
-        font-size: 19px;
-        border: 2px dotted red;
-        cursor: pointer;
-        transition: all .4s ease-in;
-    }
+.score8text span p {
+    font-weight: 600;
+    padding: 0 4px;
+}
+
+.results .button {
+    display: flex;
+    margin: 20px 2px;
+
+}
+
+.results .button button {
+    margin: 1px 12px;
+    height: 45px;
+    padding: 0 25px;
+    border: none;
+    font-size: 19px;
+    border: 2px dotted red;
+    cursor: pointer;
+    transition: all .4s ease-in;
+}
 
 
 
