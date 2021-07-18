@@ -158,12 +158,16 @@ function timer (){
             let scoreTag = '<span>Oops, You got <p>'+ totalScore +'</p> out of<p>'+ questions.length +'</p></span>';
             finalText.innerHTML = scoreTag;
     }
-    document.querySelector('incorrect').addEventListener('click', function() {
-        sec -= 5;
-        document.querySelector('seconds').innerHTML='00:'+sec;
-    });
-    timer();
 }
+}
+
+function subtractTime (answer) {
+    userAns = timer8questions
+    if (userAns === "corrAns"){
+        sec += 5;
+    }else {
+        sec += -5;
+    }
 }
 
 
